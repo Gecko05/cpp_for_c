@@ -1,5 +1,5 @@
 ## Solutions
 
-# Chapter 1
+### Chapter 1
 
-* 1.7 - 
+### Chapter 2
