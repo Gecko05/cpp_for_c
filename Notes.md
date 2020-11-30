@@ -22,3 +22,9 @@ Multiple definitions with different types act as overload.
 ## Keywords
 
 ![keywords](/res/keywords.png){:class="img-responsive" width="400px"}
+
+## Input/Output
+
+**cout**: standard output
+**cin**: standard input
+**cerr**: standard error
