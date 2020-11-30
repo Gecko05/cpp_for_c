@@ -18,3 +18,7 @@ Class constructors can specify the call to the parent class constructor. If not 
 
 *operator+* specifies that we're referring to the addition operator.
 Multiple definitions with different types act as overload.
+
+## Keywords
+
+![keywords](/res/keywords.png){:class="img-responsive" width="400px"}
