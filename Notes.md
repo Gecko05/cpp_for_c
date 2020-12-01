@@ -28,3 +28,18 @@ Multiple definitions with different types act as overload.
 **cout**: standard output
 **cin**: standard input
 **cerr**: standard error
+
+## Data Types
+
+Files *limit* and *float* contain headers that define the limits on representable values for native data types.
+
+Expression convertions:
+* Any bool char, short or enum is promoted to int.
+* int < unsigned < long < unsigned long
+      < float < double < long double
+
+Promotion convertions can generally behave well, while demotions usually involve data loss.
+*static_cast<type>(variable)* is available for a conversion that is well defined, portable and invertible.
+*reinterpret_cast* Are generally unsafe and should be avoided. They are system dependent.
+*dynamic_cast* Requires understanding inheritance.
+*const_cast* Serves to "cast away constness".
