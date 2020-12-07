@@ -43,3 +43,5 @@ Promotion convertions can generally behave well, while demotions usually involve
 *reinterpret_cast* Are generally unsafe and should be avoided. They are system dependent.
 *dynamic_cast* Requires understanding inheritance.
 *const_cast* Serves to "cast away constness".
+
+The comma expression as a whole has the value and type from its right operand. Its associates from left to right.
