@@ -45,3 +45,8 @@ Promotion convertions can generally behave well, while demotions usually involve
 *const_cast* Serves to "cast away constness".
 
 The comma expression as a whole has the value and type from its right operand. Its associates from left to right.
+
+## Tips
+
+Input can be redirected from a file to another like this *gcd < gcd.dat*.
+Output can be redirected like this *gcd > gcd.ans*.
