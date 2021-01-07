@@ -46,6 +46,33 @@ Promotion convertions can generally behave well, while demotions usually involve
 
 The comma expression as a whole has the value and type from its right operand. Its associates from left to right.
 
+## Function Prototypes
+
+The ellipsis symbol can be used for an unspecified argument list. i.e. printf(const *char cntrl_str, ...).
+C++ is able to provide default arguments to functions. i.e. sum(a, b = 3).
+Only trailing parameters can have default values.
+
+## Storage Classes
+
+The four storage classes are:
+* auto: Handles storage according to blocks.
+* extern: The compiler searches for the definition in another file.
+* register: The associated variables should be stored in high-speed memory registers, if possible.
+* static: Preserves values inside functions. Restricts visibility to file.
+In C++ the system sets to 0 external and static variables that are not initialized. However, automatic variables are not set to 0 and could contain "garbage" values.
+
+## Linkage Mysteries
+
+It is possible to link to other languages, however, this linkage is system dependent. For example, C linkage is possible using:
+
+``` extern "C" { code or include file } ```
+
+To avoid linkage problems:
+* Use header files for function prototypes, class definitions, constans, typedefs, templates, inline functions, and named namespaces.
+* Use headers with an # ifdef __filename as a guard against multiple inclusion.
+* Think in terms of the one-definition rule which states that clases, enums, templates, etc. must be defined exactly once in the program.
+* As a heuristic, envision "writing" the code into one monolithic file and "seeing" whether this causes conflicts.
+
 ## Tips
 
 Input can be redirected from a file to another like this *gcd < gcd.dat*.
