@@ -73,7 +73,32 @@ To avoid linkage problems:
 * Think in terms of the one-definition rule which states that clases, enums, templates, etc. must be defined exactly once in the program.
 * As a heuristic, envision "writing" the code into one monolithic file and "seeing" whether this causes conflicts.
 
+## Namespaces
+
+Anonymous namespaces can replace static global variables. For example:
+``` namespace { int count = 0; } // Count is available to the rest of the file ```
+Library headers conforming to ANSI C++ will no longer be using the .h suffix.
+
+## Pointers
+
+``` 
+p = &i;     // the address of object i
+p = 0;      // a special sentinel value
+p = static_cast<int*>(1507);  // absolute address
+
+```
+
+## Reference Declarations and Call by Reference
+
+```
+int         n;
+int&        nn = n;       // nn is alternative name for n
+double      a[10];
+double&     last = a[9];  // last is an alias for a[9];
+```
+
 ## Tips
 
 Input can be redirected from a file to another like this *gcd < gcd.dat*.
 Output can be redirected like this *gcd > gcd.ans*.
+A cast to void can informt the compiler that the expression's computed value is to be discarded.
