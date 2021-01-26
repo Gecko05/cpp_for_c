@@ -1,4 +1,4 @@
-int GCD(m, n){
+int GCD(int m, int n){
     if (m % n == 0){
         return n;
     }
