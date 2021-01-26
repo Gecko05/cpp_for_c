@@ -1,0 +1,8 @@
+int GCD(m, n){
+    if (m % n == 0){
+        return n;
+    }
+    else{
+        return GCD(n, m % n);
+    }
+}
