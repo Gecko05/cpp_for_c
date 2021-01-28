@@ -25,4 +25,4 @@ int main(){
 
 // It should print:
 // foo(5) = 25 since foo from file A.c is static
-// goo(5) = 45 since file A.c will use its static def
+// goo(5) = 75 because goo is using foo from file A.c
