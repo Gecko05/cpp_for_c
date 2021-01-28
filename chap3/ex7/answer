@@ -1,0 +1,24 @@
+Predict what the following program prints:
+
+int foo(int n){
+    static int count = 0;
+    ++count;
+    if (n <= 1) {
+        cout << " count = " << couny << endl;
+        return n;
+    }
+    else
+        foo(n / 3);
+}
+
+int main()
+{
+    foo(21);
+    foo(27);
+    foo(243);
+}
+
+It should print:
+4
+4
+6
