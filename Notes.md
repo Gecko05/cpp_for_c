@@ -102,3 +102,13 @@ double&     last = a[9];  // last is an alias for a[9];
 Input can be redirected from a file to another like this *gcd < gcd.dat*.
 Output can be redirected like this *gcd > gcd.ans*.
 A cast to void can informt the compiler that the expression's computed value is to be discarded.
+
+## Classes
+
+*Struct* ad *Class* can be used interchangeably. By default structs have public privacy specifications, while classes have private.
+It is recommended to use struct over class when it only has public data members.
+
+## Class Scope
+
+* ::i - This unary operator refers to external scope
+* foo_bar::i - This binary operator refers to class scope
