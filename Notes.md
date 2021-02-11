@@ -102,6 +102,7 @@ double&     last = a[9];  // last is an alias for a[9];
 Input can be redirected from a file to another like this *gcd < gcd.dat*.
 Output can be redirected like this *gcd > gcd.ans*.
 A cast to void can informt the compiler that the expression's computed value is to be discarded.
+Overlaying bitfields and unions can be useful.
 
 ## Classes
 
