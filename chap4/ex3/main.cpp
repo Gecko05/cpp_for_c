@@ -1,7 +1,6 @@
-struct brother;
 struct sister;
 
-struct brother {
+struct brother{
     char name[20];
     int age;
     struct sister sib;
@@ -10,5 +9,5 @@ struct brother {
 struct sister {
     char name[20];
     int age;
-    struct brother sib;
+    brother sib;
 } b;

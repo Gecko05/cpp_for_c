@@ -104,7 +104,7 @@ Output can be redirected like this *gcd > gcd.ans*.
 A cast to void can informt the compiler that the expression's computed value is to be discarded.
 Overlaying bitfields and unions can be useful.
 
-## Classes
+## Classes and Structs
 
 *Struct* ad *Class* can be used interchangeably. By default structs have public privacy specifications, while classes have private.
 It is recommended to use struct over class when it only has public data members.
@@ -112,6 +112,9 @@ The *static* identifier makes class data member part of the class, but separate 
 A static member of a global class must be explicitly declared and defined in file scope. The preferred stle for accessing static members is to use scope resolution, otherwise it could be misleading.
 When calling a member function, the function gets and implicit argument list (class data members). When the function is static, it doesn't get this implicit argument list.
 When the member function has *const* it is not able to modify the implicit arguments and the compiler checks that the object doesn't have its objects modified. Also ROM optimizations can also be done when using const.
+
+```typedef struct { ... } Foo;```
+Declares an anonymous structure and creates a typedef for it. 
 
 ## Class Scope
 
