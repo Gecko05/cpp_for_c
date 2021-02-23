@@ -103,6 +103,7 @@ Input can be redirected from a file to another like this *gcd < gcd.dat*.
 Output can be redirected like this *gcd > gcd.ans*.
 A cast to void can informt the compiler that the expression's computed value is to be discarded.
 Overlaying bitfields and unions can be useful.
+Favor direct list initialization whenever possible. List initialization will make the compiler complain when you try to initialize a data member with a value that cannot be held.
 
 ## Classes and Structs
 
@@ -112,6 +113,7 @@ The *static* identifier makes class data member part of the class, but separate 
 A static member of a global class must be explicitly declared and defined in file scope. The preferred stle for accessing static members is to use scope resolution, otherwise it could be misleading.
 When calling a member function, the function gets and implicit argument list (class data members). When the function is static, it doesn't get this implicit argument list.
 When the member function has *const* it is not able to modify the implicit arguments and the compiler checks that the object doesn't have its objects modified. Also ROM optimizations can also be done when using const.
+
 
 ```typedef struct { ... } Foo;```
 Declares an anonymous structure and creates a typedef for it. 
