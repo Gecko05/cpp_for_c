@@ -23,6 +23,8 @@ Multiple definitions with different types act as overload.
 
 ![keywords](/res/keywords.png){:class="img-responsive" width="400px"}
 
+* Explicit: This keyword doesn't allow the compiler to use a class constructor for implicit conversions in parameters. This way we can avoid accidental hidden bugs with constructors.
+
 ## Input/Output
 
 **cout**: standard output
