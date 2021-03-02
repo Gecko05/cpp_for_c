@@ -106,6 +106,8 @@ Output can be redirected like this *gcd > gcd.ans*.
 A cast to void can informt the compiler that the expression's computed value is to be discarded.
 Overlaying bitfields and unions can be useful.
 Favor direct list initialization whenever possible. List initialization will make the compiler complain when you try to initialize a data member with a value that cannot be held.
+*Deep Copy* means copying the memory content from one address to another. *Shallow Copy* means copying addresses.
+Check with *assert* after *new*.
 
 ## Classes and Structs
 
@@ -115,6 +117,10 @@ The *static* identifier makes class data member part of the class, but separate 
 A static member of a global class must be explicitly declared and defined in file scope. The preferred stle for accessing static members is to use scope resolution, otherwise it could be misleading.
 When calling a member function, the function gets and implicit argument list (class data members). When the function is static, it doesn't get this implicit argument list.
 When the member function has *const* it is not able to modify the implicit arguments and the compiler checks that the object doesn't have its objects modified. Also ROM optimizations can also be done when using const.
+The compiler provides a copy constructor whose signature is: 
+``` class_name::class_name(const class_name&); ```
+It is appropiate that the class provides its own copy constructor, otherwise data members who are pointers could cause issues.
+Default constructors are used to initialized arrays of a derived type.
 
 
 ```typedef struct { ... } Foo;```
