@@ -108,8 +108,9 @@ Overlaying bitfields and unions can be useful.
 Favor direct list initialization whenever possible. List initialization will make the compiler complain when you try to initialize a data member with a value that cannot be held.
 *Deep Copy* means copying the memory content from one address to another. *Shallow Copy* means copying addresses.
 Check with *assert* after *new*.
+A reference returned from a function can be used as left operand for assignment.
 
-## Classes and Structs
+## Classes, Unions and Structs
 
 *Struct* ad *Class* can be used interchangeably. By default structs have public privacy specifications, while classes have private.
 It is recommended to use struct over class when it only has public data members.
@@ -121,7 +122,7 @@ The compiler provides a copy constructor whose signature is:
 ``` class_name::class_name(const class_name&); ```
 It is appropiate that the class provides its own copy constructor, otherwise data members who are pointers could cause issues.
 Default constructors are used to initialized arrays of a derived type.
-
+Unions can't have static members, nor members with constructors or destructors. Global anonymous unions must be declared static.
 
 ```typedef struct { ... } Foo;```
 Declares an anonymous structure and creates a typedef for it. 

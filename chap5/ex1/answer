@@ -1,0 +1,6 @@
+1. Why constructos are almost always public member functions. What goes
+wrong if they are private?
+A: Private member functions are only accessible to the class itself or to a friend so
+making a private constructor would render any other class unable to instantiate it.
+A better way to limit who is able to instantiate the class is to use header files.
+There are some special cases where the private constructor is used, like singletons.
