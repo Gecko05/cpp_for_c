@@ -6,6 +6,7 @@ using namespace std;
 
 class A {
     public:
+        A() : xx(0) { cout << "A() called" << endl;}
         A(int n) : xx(n)
             { cout << "A(int " << n << ") called" << endl; }
         A(double y) : xx(y + 0.5)
@@ -22,6 +23,7 @@ int main()
     int x = 14;
     float y = 17.3;
     A z(11), zz(11.5), zzz(0);
+    A d[5];
 
     cout << "\nOBJECT ALLOCATION LAYOUT\n";
     cout << "\nx is at " << &x;
