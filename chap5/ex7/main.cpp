@@ -13,14 +13,14 @@ bool sless(my_string A, my_string B)
     }
 }
 
-void exch(my_string A, my_string B)
+void exch(my_string& A, my_string& B)
 {
     my_string t(A);
     A.assign(B);
     B.assign(t); 
 }
 
-void compexch(my_string A, my_string B)
+void compexch(my_string& A, my_string& B)
 {
     if (sless(B, A) == true)
     {
@@ -49,10 +49,7 @@ int main(int argc, char *argv[])
     toSort[0].assign("hola mama");
     toSort[1].assign("adios mama");
     toSort[2].assign("honeywell");
-    toSort[3].assign("Macarena");
+    toSort[3].assign("macarena");
     sort(toSort, 0, 3);
-    //for (int i = 0; i < 4; i++)
-    //{
-    //    toSort[i].print();
-    //}
+    return 0;
 }
