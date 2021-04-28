@@ -18,6 +18,22 @@ Class constructors can specify the call to the parent class constructor. If not 
 
 *operator+* specifies that we're referring to the addition operator.
 Multiple definitions with different types act as overload.
+When overloading non-symmetric binary operations, it's usually best practice to write an additional overloaded member function. This is because order matters in asymmetric binary operations. 
+i.e.
+
+```
+clock operator*(unsigned long m, clock c)
+{
+      return (m * c.tot_secs);
+}
+
+clock operator*(clock c, unsigned long m)
+{
+      return (m * c);
+}
+```
+
+As a rule of thumb, any time a class needs an explicit copy constructor defined, it also needs an assignment operator defined. This is usually the case when the object allocates its own memory.
 
 ## Keywords
 
