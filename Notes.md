@@ -131,3 +131,21 @@ Declares an anonymous structure and creates a typedef for it.
 
 * ::i - This unary operator refers to external scope
 * foo_bar::i - This binary operator refers to class scope
+
+## ADT Conversions
+
+The de facto type conversion constructor is as follows:
+
+```point::point(double u);```
+
+A conversion to an already defined type can be implemented by defining a special conversion function inside the user defined class.
+
+```operator type() { .... }```
+
+### Overloaded Function Selection Algorithm
+
+1. Use an exact match if found.
+2. Try standard type promotions.
+3. Try standard type conversions.
+4. Try user-defined conversions.
+5. Use a match to ellipsis if found.
