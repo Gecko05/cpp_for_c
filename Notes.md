@@ -34,6 +34,8 @@ clock operator*(clock c, unsigned long m)
 ```
 
 As a rule of thumb, any time a class needs an explicit copy constructor defined, it also needs an assignment operator defined. This is usually the case when the object allocates its own memory.
+Overloading both the assignment and plus operators doesn't imply that operator+= is overloaded.
+Operators for which there is no normal expectation should not be overloaded.
 
 ## Keywords
 

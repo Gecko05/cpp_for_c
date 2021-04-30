@@ -15,7 +15,8 @@ class dbl_vect {
         // other member functions
         int ub() const { return (size - 1); }   // upper bound
         double& operator[](int i);              // range checked
-        dbl_vect& operator = (const dbl_vect& v); // assignment
+        dbl_vect& operator=(const dbl_vect& v); // assignment
+        dbl_vect operator+(const dbl_vect& v);
     private:
         double* p;                              // base pointer
         int size;                               // number of elements
@@ -67,4 +68,15 @@ dbl_vect& dbl_vect::operator=(const dbl_vect& v)
         }
     }
     return *this;
+}
+
+dbl_vect dbl_vect::operator+(const dbl_vect& v)
+{
+    assert(size == v.size);
+    dbl_vect sum(size);
+    for (int i = 0; i < size; ++i)
+    {
+        sum.p[i] = p[i] + v.p[i];
+    }
+    return sum;
 }
