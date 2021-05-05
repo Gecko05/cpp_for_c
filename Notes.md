@@ -37,6 +37,23 @@ As a rule of thumb, any time a class needs an explicit copy constructor defined,
 Overloading both the assignment and plus operators doesn't imply that operator+= is overloaded.
 Operators for which there is no normal expectation should not be overloaded.
 
+new() ad delete() member funcntions are always implicitly static. The new() is invoked before the object exists and therefore cannot have a *this* yet.
+The delete() is called by the destructor, so the objec is already destroyed.
+
+```
+// Normal form for heap-managed classes
+
+class dbl_vect {
+public:
+      dbl_vect();       //default constructor
+      dbl_vect(const dbl_vect&);    // copy constructor
+      ....
+      // This allows assignment to work efficiently. Requires lvalue semantics.
+      dbl_vect& operator=(const dbl_vect&); //returns lvalue
+      ....
+};
+```
+
 ## Keywords
 
 ![keywords](/res/keywords.png){:class="img-responsive" width="400px"}
@@ -72,6 +89,17 @@ The ellipsis symbol can be used for an unspecified argument list. i.e. printf(co
 C++ is able to provide default arguments to functions. i.e. sum(a, b = 3).
 Only trailing parameters can have default values.
 
+## Signature Matching
+
+For a given argument, a best match is alwazs an exact match. An exact match also includes trivial conversions.
+
+| **From** | **To** |
+| --- | --- |
+| T* | const T* |
+| T* | volatile T* |
+
+These modifiers can be used in overloading resolution.
+
 ## Storage Classes
 
 The four storage classes are:
@@ -80,6 +108,7 @@ The four storage classes are:
 * register: The associated variables should be stored in high-speed memory registers, if possible.
 * static: Preserves values inside functions. Restricts visibility to file.
 In C++ the system sets to 0 external and static variables that are not initialized. However, automatic variables are not set to 0 and could contain "garbage" values.
+* volatile: Means that a variable can be modified external to the program code. Also suppresses compiler optimizations on it.
 
 ## Linkage Mysteries
 
