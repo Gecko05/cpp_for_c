@@ -1,0 +1,1 @@
+The compiler will throw an error saying that there is no overloaded function that matches the argument list (int and rational).

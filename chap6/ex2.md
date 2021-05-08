@@ -1,0 +1,1 @@
+Conversion of integer 7 and double 7.0 lead to different representations because the implementations for int and double conversion are different. The compiler calls the corresponding function according to the function signature match.
