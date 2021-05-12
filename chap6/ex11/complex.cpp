@@ -48,6 +48,7 @@ complex operator+(complex a, complex b)
     complex r(0);
     r.real = a.real + b.real;
     r.imag = a.imag + b.imag;
+    cout << "result adding" << r << endl;
     return r;
 }
 
@@ -81,16 +82,8 @@ complex operator+(double b, complex a)
 
 complex complex::operator=(complex c)
 {
+    cout << "assigning" << endl;
+    real = c.real;
+    imag = c.imag;
     return c;
-}
-
-int main(int argc, char *arv[])
-{
-    complex cm1(5);
-    complex cm2(0);
-    cm2.assign(3, 5);
-    cout << cm2 << endl;
-    cout << (-cm2) << endl;
-    cout << (cm2 + 4.5) << endl;
-    cout << (4.5 + cm2) << endl;
 }

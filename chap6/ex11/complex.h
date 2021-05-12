@@ -1,6 +1,7 @@
 #ifndef __COMPLEX__H
 #define __COMPLEX__H
 
+#include <iostream>
 using namespace std;
 
 class complex {
