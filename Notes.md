@@ -196,3 +196,51 @@ A conversion to an already defined type can be implemented by defining a special
 3. Try standard type conversions.
 4. Try user-defined conversions.
 5. Use a match to ellipsis if found.
+
+1. Exact match with trivial conversions on nontemplate functions
+2. Exact match using funcion templates
+3. Ordinary argument resolution on nontemplate functions
+
+## Templates
+
+The identifier for a template argument is as follows:
+
+```template <class identifier>```
+
+When a template class is used, the code must always use the angle brackets as part of the declaration.
+
+Member functions, when declared and defined inside the class, are, as usual, inline. When defining them externally, the full angle bracket declaration must be used.
+
+```TYPE top_of() const 
+{
+      return s[top];
+}```
+
+would be written as:
+
+```template<class TYPE> TYPE stack<TYPE>::top_of() const
+{
+      return s[top];
+}```
+
+Destructor definition:
+
+```template<class TYPE> stack<TYPE>::~stack()
+{ delete []s; }```
+
+Template classes can contain friends. A friend function that does not use a template specification is universally a friend of all instantiations of the template class. A friend function that does, is specifically a friend of its instantiated class.
+
+```friend vect<T> product(vect<T> v); // instantiated ```
+
+Static members are nont universal, but are specific to each instantiation.
+
+```
+template <class T>
+class foo {
+      public:
+      static int count;
+};
+
+foo<int> a;
+foo<double> b;
+```
