@@ -244,3 +244,23 @@ class foo {
 foo<int> a;
 foo<double> b;
 ```
+Classes and functions can have several class template arguments. It's also possible to provide a default class instantiation.
+```template<class T = doble>```
+
+Members may themselves be templates inside th etemplate class.
+```
+template <class T1>
+class foo{
+      public:
+      template <class T2>
+      class fooprime {
+      .....
+      // can use T1 and T2 in fooprime
+      };
+      // can only use T1 in foo
+      .......
+};
+
+foo<int>::fooprime<char> a;
+```
+There can also be function member templates if supported by compiler.
