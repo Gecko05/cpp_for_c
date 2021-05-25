@@ -264,3 +264,18 @@ class foo{
 foo<int>::fooprime<char> a;
 ```
 There can also be function member templates if supported by compiler.
+
+## STL
+
+The standard template library is the C++ library providing generic programming for manny standard data structures and algorithms. The STL provides three components: containers, iterators and algorithms.
+
+### STL Typical Container Interfaces
+
+* Constructors, including default and copy constructors
+* Element access
+* Element insertion
+* Element deletion
+* Destructor
+* Iterators
+
+Containers are traversed using iterators, pointer-like objects that are available as templates and optimized for use with STL containers.
