@@ -279,3 +279,7 @@ The standard template library is the C++ library providing generic programming f
 * Iterators
 
 Containers are traversed using iterators, pointer-like objects that are available as templates and optimized for use with STL containers.
+
+Containers come in two major families: sequence and associative. Associative containenrs have keys for looking up elements. Sequence containers are ordered by having a sequence of elements.
+
+The associative containers have key-based accessible elements and an ordering relation **Compare**, which is the comparison object for the associative container.
