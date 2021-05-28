@@ -283,3 +283,24 @@ Containers are traversed using iterators, pointer-like objects that are availabl
 Containers come in two major families: sequence and associative. Associative containenrs have keys for looking up elements. Sequence containers are ordered by having a sequence of elements.
 
 The associative containers have key-based accessible elements and an ordering relation **Compare**, which is the comparison object for the associative container.
+
+### Container Adapters
+
+Containenr adapter classes modify existing containers to produce various public behaviors based on an existing implementation. Three provided container adapters are **stack**, **queue**, and **priority_queue**.
+
+### Iterators
+
+Navigation over containers is by iterator. There are five iterator types: input, output, forward, bidirectional, and random access. Not all iterator types may be available for a given container class.
+Input iterators support equality operations, dereferencing, and autoincrement.
+Output iterators support dereferencing restricted to the left-hand side of assignment and autoincrement.
+Forward iterators support all input/output iterator operations, as well as unrestricted use of assignment.
+Bidirectional iterators support all forward iterator operations, as well as both autoincrement and autodecrement.
+Random-access iterators support all bidirectional iterator operations, as well as address arithmetic operations, such as indexing. They also support comparison operations.
+
+### Algorithms
+
+The STL algorithms library contains the following four categories:
+* Sorting algorithms
+* Nonmutating sequence algorithms
+* Mutating sequence algorithms
+* Numerical algorithms

@@ -1,4 +1,8 @@
 // A typical container algorithm
+#include <iostream>
+#include <deque>
+
+using namespace std;
 
 double sum(deque<double> &dq)
 {
