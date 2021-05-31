@@ -21,6 +21,9 @@ double integrate(gen g, int n) // integrate on (0, 1)
 {
     vector<double> fx(n);
 
+    // Calls the gen class as a function and passes the return
+    // value to the current iterator, this way the vector fx
+    // is filled with values.
     generate(fx.begin(), fx.end(), g);
     return(accumulate(fx.begin(), fx.end(), 0.0) / n);
 }
