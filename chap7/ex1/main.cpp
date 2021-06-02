@@ -1,13 +1,14 @@
 // template stack implementation
 
 #include <iostream>
+#include <assert.h>
 
 using namespace std;
 
-template <class TYPE>
+template <class TYPE, int size>
 class stack{
     public:
-        explicit stack(int size = 100)
+        explicit stack()
             : max_len(size), top(EMPTY), s(new TYPE[size])
             {
                 assert(s != 0);
@@ -46,29 +47,18 @@ class stack{
         int top;        
 };
 
-// Reversing an array of char* represented strings
-
-void reverse(char* str[], int n)
+int main()
 {
-    stack<char*> stk(n);
-    int i;
-
-    for (i = 0; i < n; i++)
+    stack<int, 100> s1;
+    for (int i = 0; i < 10; i++)
     {
-        stk.push(str[i]);
-    }
-    for (i = 0; i < n; i++)
-    {
-        str[i] = stk.pop();
-    }
-}
-
-// Initializing stack of complex numbers from an array
-
-void init(complex c[], stack<complex>& stk, int n)
-{
-    for (int i = 0; i < n; ++i)
-    {
-        stk.push(c[i]);
+        if (s1.full())
+        {
+            cout << "error, full stack" << endl;
+        }
+        else
+        {
+            s1.push(i);
+        }
     }
 }
