@@ -57,5 +57,7 @@ int main()
     spVal x(2,3);
     spVal y(3,4);
     spVal z(5,6);
+    cout << x << " " << y << " " << z << endl;
     cycle(x,y,z);
+    cout << x << " " << y << " " << z << endl;
 }
