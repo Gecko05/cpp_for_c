@@ -22,7 +22,7 @@ class vector {
 };
 
 template <class T>
-vector<T>::vector(int n = 100): size(n)
+vector<T>::vector(int n): size(n)
 {
     assert(n > 0);
     p = new T[size];
