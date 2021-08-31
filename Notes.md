@@ -304,3 +304,20 @@ The STL algorithms library contains the following four categories:
 * Nonmutating sequence algorithms
 * Mutating sequence algorithms
 * Numerical algorithms
+
+### Inheritance
+
+A class can be derived from an existing class by using the form
+
+```
+class class-name: (public|protected|private) base-name{
+      member declarations
+};
+```
+
+A reference to the derived-class maybe be implicitly converted to a reference to the public base-class.
+
+```
+grad_student gs("Morris Pohl", 200);
+student& rs = gs;
+```
