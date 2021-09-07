@@ -321,3 +321,5 @@ A reference to the derived-class maybe be implicitly converted to a reference to
 grad_student gs("Morris Pohl", 200);
 student& rs = gs;
 ```
+
+Only nonstatic member functions can be virtual. Constructos cannot be virtual, but destructors can be. As a rule of thumb, any class having virtual functions should have a virtual destructor.
