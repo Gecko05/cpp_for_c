@@ -332,3 +332,4 @@ A pure virtual function is one whose body is normally undefined:
 
 The pure virtual function is used to defer the implementation decision of the function. In OOP terminology, it is called a deferred method.
 A class that has at least one pure virtual function is an abstract class. This class cannot be used to declare objects. Instead, it is used to declare pointers that can access subtype objects derived from the abstract class.
+A union may have constructors and destructors but not virtual functions. It can neither serve as abase class nor have a base class. Members of a union cannot require constructors or destructors.
